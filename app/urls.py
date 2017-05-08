@@ -4,7 +4,7 @@ from django.conf import settings
 from app.views import *
 
 urlpatterns = [
-	url(r'^$',
+	url(r'^',
         IndexView.as_view(),
         name='index'),
 ]
