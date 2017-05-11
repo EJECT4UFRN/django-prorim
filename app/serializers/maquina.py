@@ -4,4 +4,4 @@ from app.models import Maquina
 class MaquinaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Maquina
-        fields = fields = '__all__'
+        fields = '__all__'

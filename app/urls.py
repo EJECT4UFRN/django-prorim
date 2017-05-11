@@ -1,10 +1,48 @@
 from django.conf.urls import url, include
 from django.conf import settings
+from app.views import (
+    IndexView,
+    ChoiceDisponibilidadeMaquinaView,
+    ChoiceExameColetaView,
+    ChoicePeriodoTurnoView,
+    ChoiceTesteAguaView,
+    ControleAguaView,
+    ControleColetaView,
+    ControleDesinfeccaoView,
+    # ControleFinanceiroView,
+    ErroView,
+    EstadiaView,
+    ManutencaoCorretivaView,
+    ManutencaoPreventivaView,
+    MaquinaView,
+    SalaView,
+    TurnoView,
+)
+from rest_framework.routers import DefaultRouter
 
-from app.views import *
+ROUTER = DefaultRouter()
+ROUTER.register(r'choice-disponibilidade-maquina', ChoiceDisponibilidadeMaquinaView)
+ROUTER.register(r'choice-exame-coleta', ChoiceExameColetaView)
+ROUTER.register(r'choice-periodo-turno', ChoicePeriodoTurnoView)
+ROUTER.register(r'choice-teste-agua', ChoiceTesteAguaView)
+ROUTER.register(r'controle-agua', ControleAguaView)
+ROUTER.register(r'controle-coleta', ControleColetaView)
+ROUTER.register(r'controle-desinfeccao', ControleDesinfeccaoView)
+# ROUTER.register(r'controle-financeiro', ControleFinanceiroView)
+ROUTER.register(r'erro', ErroView)
+ROUTER.register(r'estadia', EstadiaView)
+ROUTER.register(r'manutencao-corretiva', ManutencaoCorretivaView)
+ROUTER.register(r'manutencao-preventiva', ManutencaoPreventivaView)
+ROUTER.register(r'maquina', MaquinaView)
+ROUTER.register(r'sala', SalaView)
+ROUTER.register(r'turno', TurnoView)
+
 
 urlpatterns = [
-	url(r'^',
+    url(r'^api/', include(ROUTER.urls)),
+    url(
+        r'^/',
         IndexView.as_view(),
-        name='index'),
+        name='index'
+    ),
 ]

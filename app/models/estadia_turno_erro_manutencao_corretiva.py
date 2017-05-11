@@ -150,13 +150,13 @@ class Erro(models.Model):
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_ENFERMEIRO,
     )
-    estadia = models.OneToOneField(
+    estadia = models.ForeignKey(
         Estadia,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_ESTADIA,
         related_name='erro',
     )
-    maquina = models.OneToOneField(
+    maquina = models.ForeignKey(
         Maquina,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_MAQUINA,

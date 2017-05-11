@@ -4,7 +4,7 @@ from app.models import Estadia, Erro
 class CleanErroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Erro
-        fields = fields = '__all__'
+        exclude = ('estadia',)
         depth = 1
 
 
@@ -13,6 +13,11 @@ class EstadiaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Estadia
-        fields = fields = '__all__'
+        fields = '__all__'
         depth = 1
-        
+
+
+class PureEstadiaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Estadia
+        fields = '__all__'

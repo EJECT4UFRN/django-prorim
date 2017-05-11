@@ -4,15 +4,19 @@ from app.models import Turno, Estadia
 class CleanEstadiaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Estadia
-        fields = fields = '__all__'
+        exclude = ('turno',)
         depth = 1
-
 
 class TurnoSerializer(serializers.ModelSerializer):
     estadias = CleanEstadiaSerializer(many=True)
 
     class Meta:
         model = Turno
-        fields = fields = '__all__'
+        fields = '__all__'
         depth = 1
+
+class PureTurnoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Turno
+        fields = '__all__'
         

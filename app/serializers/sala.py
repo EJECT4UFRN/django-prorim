@@ -4,4 +4,4 @@ from app.models import Sala
 class SalaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sala
-        fields = fields = '__all__'
+        fields = '__all__'

@@ -6,8 +6,9 @@ from app.serializers.controle_agua import *
 from app.serializers.controle_coleta import *
 from app.serializers.controle_desinfeccao import *
 from app.serializers.controle_financeiro import *
-from app.serializers.erro_manutencao_corretiva import *
+from app.serializers.erro import *
 from app.serializers.estadia import *
+from app.serializers.manutencao_corretiva import *
 from app.serializers.manutencao_preventiva import *
 from app.serializers.maquina import *
 from app.serializers.sala import *
