@@ -41,7 +41,7 @@ ROUTER.register(r'turno', TurnoView)
 urlpatterns = [
     url(r'^api/', include(ROUTER.urls)),
     url(
-        r'^/',
+        r'^',
         IndexView.as_view(),
         name='index'
     ),

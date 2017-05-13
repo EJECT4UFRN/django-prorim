@@ -171,6 +171,10 @@ class Erro(models.Model):
         else:
             return None
 
+    def __str__(self):
+        return str(self.numero)
+
+
 class ManutencaoCorretiva(models.Model):
     """ Exibido  """
 
@@ -188,6 +192,9 @@ class ManutencaoCorretiva(models.Model):
         auto_now_add=False,
         auto_now=True,
         verbose_name=VERBOSE_ATUALIZADO,
+    )
+    data = models.DateTimeField(
+        verbose_name=VERBOSE_DATA,
     )
     erro = models.OneToOneField(
         Erro,
