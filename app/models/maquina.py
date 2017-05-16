@@ -1,4 +1,5 @@
 from django.db import models
+from app.models.choice_disponibilidade_maquina import ChoiceDisponibilidadeMaquina
 from app.strings import (
     VERBOSE_MAQUINA,
     VERBOSE_PLURAL_MAQUINA,
@@ -34,8 +35,9 @@ class Maquina(models.Model):
         max_length=150,
         verbose_name=VERBOSE_FABRICANTE,
     )
-    disponibilidade = models.CharField(
-        max_length=150,
+    disponibilidade = models.ForeignKey(
+        ChoiceDisponibilidadeMaquina,
+        on_delete=models.CASCADE,
         verbose_name=VERBOSE_DISPONIBILIDADE,
     )
     
