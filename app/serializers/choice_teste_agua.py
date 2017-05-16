@@ -4,4 +4,4 @@ from app.models import ChoiceTesteAgua
 class ChoiceTesteAguaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChoiceTesteAgua
-        fields = fields = '__all__'
+        fields = '__all__'

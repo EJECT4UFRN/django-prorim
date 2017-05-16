@@ -4,6 +4,6 @@ from app.models import ChoiceExameColeta
 class ChoiceExameColetaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChoiceExameColeta
-        fields = fields = '__all__'
+        fields = '__all__'
 
 

@@ -33,4 +33,7 @@ class Sala(models.Model):
         max_length=150,
         verbose_name=VERBOSE_IDENTIFICADOR,
     )
+
+    def __str__(self):
+        return str(self.identificador)
     

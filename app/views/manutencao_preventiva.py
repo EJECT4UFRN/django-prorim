@@ -5,7 +5,6 @@ from app.serializers import ManutencaoPreventivaSerializer, PureManutencaoPreven
 
 class ManutencaoPreventivaView(viewsets.ModelViewSet):
     queryset = ManutencaoPreventiva.objects.all()
-    serializer_class = ManutencaoPreventivaSerializer
 
     def get_serializer_class(self):
         if self.action == 'create' or self.action == 'update':

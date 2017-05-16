@@ -13,4 +13,5 @@ from app.views.manutencao_corretiva import *
 from app.views.manutencao_preventiva import *
 from app.views.maquina import *
 from app.views.sala import *
+from app.views.tecnico import *
 from app.views.turno import *

@@ -1,4 +1,5 @@
 from django.db import models
+from app.models import ChoiceTesteAgua
 from app.strings import (
     VERBOSE_CONTROLE_AGUA,
     VERBOSE_PLURAL_CONTROLE_AGUA,
@@ -30,8 +31,9 @@ class ControleAgua(models.Model):
     data = models.DateTimeField(
         verbose_name=VERBOSE_DATA,
     )
-    teste = models.CharField(
-        max_length=150,
+    teste = models.ForeignKey(
+        ChoiceTesteAgua,
+        on_delete=models.CASCADE,
         verbose_name=VERBOSE_TESTE,
     )
     resultado = models.BooleanField(

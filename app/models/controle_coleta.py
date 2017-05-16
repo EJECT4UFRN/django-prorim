@@ -1,4 +1,5 @@
 from django.db import models
+from app.models.choice_exame_coleta import ChoiceExameColeta
 from app.strings import (
     VERBOSE_CONTROLE_COLETA,
     VERBOSE_PLURAL_CONTROLE_COLETA,
@@ -40,8 +41,9 @@ class ControleColeta(models.Model):
     data_resultado = models.DateTimeField(
         verbose_name=VERBOSE_DATA_RESULTADO,
     )
-    exame = models.CharField(
-        max_length=150,
+    exame = models.ForeignKey(
+        ChoiceExameColeta,
+        on_delete=models.CASCADE,
         verbose_name=VERBOSE_EXAME,
     )
     resultado = models.CharField(

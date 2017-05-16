@@ -1,9 +1,14 @@
 from rest_framework import viewsets
 from app.models import ControleColeta
-from app.serializers import ControleColetaSerializer
+from app.serializers import PureControleColetaSerializer, ControleColetaSerializer
 
 
 class ControleColetaView(viewsets.ModelViewSet):
     queryset = ControleColeta.objects.all()
-    serializer_class = ControleColetaSerializer
+
+    def get_serializer_class(self):
+        if self.action == 'create' or self.action == 'update':
+            return PureControleColetaSerializer
+        else:
+            return ControleColetaSerializer
     

@@ -1,7 +1,14 @@
 from rest_framework import serializers
 from app.models import ControleColeta
 
+class PureControleColetaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ControleColeta
+        fields = '__all__'
+
+
 class ControleColetaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ControleColeta
-        fields = fields = '__all__'
+        fields = '__all__'
+        depth = 1

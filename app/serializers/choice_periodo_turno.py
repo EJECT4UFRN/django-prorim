@@ -4,4 +4,4 @@ from app.models import ChoicePeriodoTurno
 class ChoicePeriodoTurnoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChoicePeriodoTurno
-        fields = fields = '__all__'
+        fields = '__all__'

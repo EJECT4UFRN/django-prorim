@@ -4,4 +4,4 @@ from app.models import ChoiceDisponibilidadeMaquina
 class ChoiceDisponibilidadeMaquinaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChoiceDisponibilidadeMaquina
-        fields = fields = '__all__'
+        fields = '__all__'
