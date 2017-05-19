@@ -1,7 +1,8 @@
 from django.db import models
+from django.dispatch import receiver
 from django.contrib.auth.models import User
 from app.models.sala import Sala
-from app.models.maquina import Maquina
+from app.models.maquina_manutencao_preventiva import Maquina
 from app.models.choice_periodo_turno import ChoicePeriodoTurno
 from app.strings import (
     VERBOSE_TURNO,
@@ -153,7 +154,7 @@ class Erro(models.Model):
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_ENFERMEIRO,
     )
-    estadia = models.ForeignKey(
+    estadia = models.OneToOneField(
         Estadia,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_ESTADIA,
@@ -198,6 +199,8 @@ class ManutencaoCorretiva(models.Model):
     )
     data = models.DateTimeField(
         verbose_name=VERBOSE_DATA,
+        blank=True,
+        null=True,
     )
     erro = models.OneToOneField(
         Erro,
@@ -207,9 +210,19 @@ class ManutencaoCorretiva(models.Model):
     )
     acao = models.TextField(
         verbose_name=VERBOSE_ACAO,
+        blank=True,
+        null=True,
     )
     tecnico = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_TECNICO,
+        blank=True,
+        null=True,
     )
+
+@receiver(models.signals.post_save, sender=Erro)
+def execute_on_erro_save(sender, instance, created, *args, **kwargs):
+    if created:
+        ManutencaoCorretiva.objects.create(erro=instance)
+        

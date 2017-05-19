@@ -10,6 +10,7 @@ from app.views import (
     ControleColetaView,
     ControleDesinfeccaoView,
     # ControleFinanceiroView,
+    EnfermeiroView,
     ErroView,
     EstadiaView,
     ManutencaoCorretivaView,
@@ -30,6 +31,7 @@ ROUTER.register(r'controle-agua', ControleAguaView)
 ROUTER.register(r'controle-coleta', ControleColetaView)
 ROUTER.register(r'controle-desinfeccao', ControleDesinfeccaoView)
 # ROUTER.register(r'controle-financeiro', ControleFinanceiroView)
+ROUTER.register(r'enfermeiro', EnfermeiroView)
 ROUTER.register(r'erro', ErroView)
 ROUTER.register(r'estadia', EstadiaView)
 ROUTER.register(r'manutencao-corretiva', ManutencaoCorretivaView)

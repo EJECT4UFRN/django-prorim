@@ -14,7 +14,7 @@ class EstadiaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Estadia
         fields = '__all__'
-        depth = 1
+        depth = 2
 
 
 class PureEstadiaSerializer(serializers.ModelSerializer):

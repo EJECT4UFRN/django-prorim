@@ -13,7 +13,7 @@ class TurnoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Turno
         fields = '__all__'
-        depth = 1
+        depth = 3
 
 class PureTurnoSerializer(serializers.ModelSerializer):
     class Meta:
