@@ -12,5 +12,4 @@ from app.serializers.manutencao_corretiva import *
 from app.serializers.manutencao_preventiva import *
 from app.serializers.maquina import *
 from app.serializers.sala import *
-from app.serializers.turno import *
 from app.serializers.user import *

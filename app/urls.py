@@ -18,7 +18,6 @@ from app.views import (
     MaquinaView,
     SalaView,
     TecnicoView,
-    TurnoView,
 )
 from rest_framework.routers import DefaultRouter
 
@@ -39,7 +38,6 @@ ROUTER.register(r'manutencao-preventiva', ManutencaoPreventivaView)
 ROUTER.register(r'maquina', MaquinaView)
 ROUTER.register(r'sala', SalaView)
 ROUTER.register(r'tecnico', TecnicoView)
-ROUTER.register(r'turno', TurnoView)
 
 
 urlpatterns = [

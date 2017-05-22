@@ -33,13 +33,13 @@ from app.strings import (
 )
 
 
-class Turno(models.Model):
+class Estadia(models.Model):
     """ Exibido  """
 
     class Meta:
         """ Selecionar strings que serão usadas no front 'admin'. """
-        verbose_name = VERBOSE_TURNO
-        verbose_name_plural = VERBOSE_PLURAL_TURNO
+        verbose_name = VERBOSE_ESTADIA
+        verbose_name_plural = VERBOSE_PLURAL_ESTADIA
 
     criado = models.DateTimeField(
         auto_now_add=True,
@@ -63,37 +63,6 @@ class Turno(models.Model):
         Sala,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_SALA,
-        related_name='turno',
-    )
-
-    def get_estadias(self):
-        """ Retorna as estadias que ocorreram nesse turno. """
-        return Estadia.objects.all().filter(turno=self)
-
-
-class Estadia(models.Model):
-    """ Exibido  """
-
-    class Meta:
-        """ Selecionar strings que serão usadas no front 'admin'. """
-        verbose_name = VERBOSE_ESTADIA
-        verbose_name_plural = VERBOSE_PLURAL_ESTADIA
-
-    criado = models.DateTimeField(
-        auto_now_add=True,
-        auto_now=False,
-        verbose_name=VERBOSE_CRIADO,
-    )
-    atualizado = models.DateTimeField(
-        auto_now_add=False,
-        auto_now=True,
-        verbose_name=VERBOSE_ATUALIZADO,
-    )
-    turno = models.ForeignKey(
-        Turno,
-        on_delete=models.CASCADE,
-        verbose_name=VERBOSE_TURNO,
-        related_name='estadias',
     )
     numero_da_maca = models.IntegerField(
         verbose_name=VERBOSE_NUMERO_DA_MACA,

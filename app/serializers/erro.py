@@ -15,9 +15,3 @@ class ErroSerializer(serializers.ModelSerializer):
         model = Erro
         fields = '__all__'
         depth = 1
-
-
-class PureErroSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Erro
-        fields = '__all__'
