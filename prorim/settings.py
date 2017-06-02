@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     #3rd party
     'rest_framework',
     'djangorestframework_camel_case',
+    'corsheaders',
     #my apps
     'app',
 ]
@@ -52,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # added
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'prorim.urls'
@@ -145,3 +147,7 @@ REST_FRAMEWORK = {
         'djangorestframework_camel_case.parser.CamelCaseJSONParser', # Any other parsers
     ),
 }
+
+# CORS
+
+CORS_ORIGIN_ALLOW_ALL = True
