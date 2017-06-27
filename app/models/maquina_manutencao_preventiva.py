@@ -1,5 +1,6 @@
 from django.db import models
 from django.dispatch import receiver
+from app.models.sala import Sala
 from app.models.choice_disponibilidade_maquina import ChoiceDisponibilidadeMaquina
 from app.strings import (
     VERBOSE_MAQUINA,
@@ -55,6 +56,12 @@ class Maquina(models.Model):
         ChoiceDisponibilidadeMaquina,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_DISPONIBILIDADE,
+    )
+    sala = models.ForeignKey(
+        Sala,
+        on_delete=models.CASCADE,
+        verbose_name=VERBOSE_DISPONIBILIDADE,
+        default=0
     )
 
 class ManutencaoPreventiva(models.Model):

@@ -7,6 +7,7 @@ from app.views import (
     ChoicePeriodoTurnoView,
     ChoiceTesteAguaView,
     ControleAguaView,
+    FileControleAguaView,
     ControleColetaView,
     ControleDesinfeccaoView,
     # ControleFinanceiroView,
@@ -18,6 +19,7 @@ from app.views import (
     MaquinaView,
     SalaView,
     TecnicoView,
+    TestView
 )
 from rest_framework.routers import DefaultRouter
 
@@ -27,6 +29,7 @@ ROUTER.register(r'choice-exame-coleta', ChoiceExameColetaView)
 ROUTER.register(r'choice-periodo-turno', ChoicePeriodoTurnoView)
 ROUTER.register(r'choice-teste-agua', ChoiceTesteAguaView)
 ROUTER.register(r'controle-agua', ControleAguaView)
+ROUTER.register(r'controle-agua/file', FileControleAguaView)
 ROUTER.register(r'controle-coleta', ControleColetaView)
 ROUTER.register(r'controle-desinfeccao', ControleDesinfeccaoView)
 # ROUTER.register(r'controle-financeiro', ControleFinanceiroView)
@@ -38,13 +41,8 @@ ROUTER.register(r'manutencao-preventiva', ManutencaoPreventivaView)
 ROUTER.register(r'maquina', MaquinaView)
 ROUTER.register(r'sala', SalaView)
 ROUTER.register(r'tecnico', TecnicoView)
-
+ROUTER.register(r'test', TestView)
 
 urlpatterns = [
-    url(r'^api/', include(ROUTER.urls)),
-    url(
-        r'^',
-        IndexView.as_view(),
-        name='index'
-    ),
+    url(r'^api/', include(ROUTER.urls))
 ]

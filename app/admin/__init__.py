@@ -12,3 +12,4 @@ from app.admin.manutencao_corretiva import ManutencaoCorretivaAdmin
 from app.admin.manutencao_preventiva import ManutencaoPreventivaAdmin
 from app.admin.maquina import MaquinaAdmin
 from app.admin.sala import SalaAdmin
+from app.admin.test import TestAdmin

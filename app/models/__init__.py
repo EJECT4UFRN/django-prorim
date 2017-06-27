@@ -14,3 +14,4 @@ from app.models.erro_estadia_manutencao_corretiva import (
 )
 from app.models.maquina_manutencao_preventiva import Maquina, ManutencaoPreventiva
 from app.models.sala import Sala
+from app.models.test import TestModel
