@@ -9,3 +9,12 @@ pyparsing==2.2.0
 python-dateutil==2.6.0
 pytz==2017.2
 six==1.10.0
+
+Django==1.11.2
+django-cors-headers==2.1.0
+django-webpack-loader==0.4.1
+djangorestframework==3.6.2
+djangorestframework-camel-case==0.2.0
+python-dateutil==2.6.0
+pytz==2017.2
+six==1.10.0

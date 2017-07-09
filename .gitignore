@@ -24,3 +24,6 @@ yarn-error.log*
 /media
 __pycache__
 # *.sqlite3
+
+# virtualenv
+/venv

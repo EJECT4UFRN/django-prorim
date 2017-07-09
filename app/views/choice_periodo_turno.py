@@ -6,4 +6,3 @@ from app.serializers import ChoicePeriodoTurnoSerializer
 class ChoicePeriodoTurnoView(viewsets.ModelViewSet):
     queryset = ChoicePeriodoTurno.objects.all()
     serializer_class = ChoicePeriodoTurnoSerializer
-    

@@ -1,10 +1,10 @@
 from django.db import models
 from app.models import ChoiceTesteAgua
 from app.strings import (
-    VERBOSE_CONTROLE_AGUA,
-    VERBOSE_PLURAL_CONTROLE_AGUA,
     VERBOSE_CRIADO,
     VERBOSE_ATUALIZADO,
+    VERBOSE_CONTROLE_AGUA,
+    VERBOSE_PLURAL_CONTROLE_AGUA,
     VERBOSE_DATA,
     VERBOSE_TESTE,
     VERBOSE_SATISFATORIO,
@@ -13,12 +13,12 @@ from app.strings import (
 )
 
 class ControleAgua(models.Model):
-    """ Criado, editado, exibido na view 'Controle água'. """
+    """ Controle de água da para a clínica. """
 
     class Meta:
-        """ Selecionar strings que serão usadas no front 'admin'. """
         verbose_name = VERBOSE_CONTROLE_AGUA
         verbose_name_plural = VERBOSE_PLURAL_CONTROLE_AGUA
+        ordering = ['-data']
 
     criado = models.DateTimeField(
         auto_now_add=True,
@@ -47,7 +47,7 @@ class ControleAgua(models.Model):
         default=0,
     )
     arquivo_resultado = models.FileField(
-        verbose_name = VERBOSE_ARQUIVO,
+        verbose_name=VERBOSE_ARQUIVO,
         upload_to='uploads/%Y/%m/%d/',
         blank=True,
     )

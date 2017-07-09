@@ -9,10 +9,9 @@ from app.strings import (
 )
 
 class Sala(models.Model):
-    """ Exibido  """
+    """ Local onde serão realizadas as estadias.  """
 
     class Meta:
-        """ Selecionar strings que serão usadas no front 'admin'. """
         verbose_name = VERBOSE_SALA
         verbose_name_plural = VERBOSE_PLURAL_SALA
 
@@ -36,4 +35,3 @@ class Sala(models.Model):
 
     def __str__(self):
         return str(self.identificador)
-    

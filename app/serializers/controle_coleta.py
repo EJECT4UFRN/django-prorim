@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from app.models import ControleColeta
 
-class PureControleColetaSerializer(serializers.ModelSerializer):
+class ShallowControleColetaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ControleColeta
         fields = '__all__'

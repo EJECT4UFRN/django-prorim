@@ -10,12 +10,12 @@ from app.strings import (
 )
 
 class ControleDesinfeccao(models.Model):
-    """ Exibido  """
+    """ Controle de desinfecção da clínica. """
 
     class Meta:
-        """ Selecionar strings que serão usadas no front 'admin'. """
         verbose_name = VERBOSE_CONTROLE_DESINFECCAO
         verbose_name_plural = VERBOSE_PLURAL_CONTROLE_DESINFECCAO
+        ordering = ['-data']
 
     criado = models.DateTimeField(
         auto_now_add=True,

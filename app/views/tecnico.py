@@ -4,6 +4,5 @@ from app.serializers import UserSerializer
 
 
 class TecnicoView(viewsets.ModelViewSet):
-    queryset = User.objects.all().filter(groups__name__in=['tecnico'])
+    queryset = User.objects.all().filter(groups__name__in=['Técnico'])
     serializer_class = UserSerializer
-    

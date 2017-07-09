@@ -7,7 +7,7 @@ class ManutencaoPreventivaSerializer(serializers.ModelSerializer):
         fields = '__all__'
         depth = 1
 
-class PureManutencaoPreventivaSerializer(serializers.ModelSerializer):
+class ShallowManutencaoPreventivaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ManutencaoPreventiva
         fields = '__all__'

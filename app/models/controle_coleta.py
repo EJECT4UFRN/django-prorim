@@ -15,12 +15,12 @@ from app.strings import (
 )
 
 class ControleColeta(models.Model):
-    """ Exibido  """
+    """ Controle de controle de coleta da clínica.  """
 
     class Meta:
-        """ Selecionar strings que serão usadas no front 'admin'. """
         verbose_name = VERBOSE_CONTROLE_COLETA
         verbose_name_plural = VERBOSE_PLURAL_CONTROLE_COLETA
+        ordering = ['-data_realizado']
 
     criado = models.DateTimeField(
         auto_now_add=True,

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'djangorestframework_camel_case',
     'corsheaders',
     #my apps
-    'app',
+    'app.apps.CustomAppConfig',
 ]
 
 MIDDLEWARE = [

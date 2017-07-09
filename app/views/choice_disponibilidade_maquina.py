@@ -6,4 +6,3 @@ from app.serializers import ChoiceDisponibilidadeMaquinaSerializer
 class ChoiceDisponibilidadeMaquinaView(viewsets.ModelViewSet):
     queryset = ChoiceDisponibilidadeMaquina.objects.all()
     serializer_class = ChoiceDisponibilidadeMaquinaSerializer
-    
