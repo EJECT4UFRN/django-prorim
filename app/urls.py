@@ -20,6 +20,7 @@ from app.views import (
     SalaView,
     SecaoView,
     TecnicoView,
+    UserView,
 )
 from rest_framework.routers import DefaultRouter
 
@@ -46,5 +47,6 @@ ROUTER.register(r'secao', SecaoView)
 ROUTER.register(r'tecnico', TecnicoView)
 
 urlpatterns = [
-    url(r'^api/', include(ROUTER.urls))
+    url(r'^api/', include(ROUTER.urls)),
+    url(r'^api/user/$', UserView.as_view(), name='rest_user_details'),
 ]

@@ -18,3 +18,4 @@ from app.views.paciente import PacienteView
 from app.views.sala import SalaView
 from app.views.secao import SecaoView
 from app.views.tecnico import TecnicoView
+from app.views.user import UserView

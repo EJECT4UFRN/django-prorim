@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'djangorestframework_camel_case',
     'corsheaders',
+    'rest_framework.authtoken',
+    'rest_auth',
     #my apps
     'app.apps.CustomAppConfig',
 ]
@@ -149,6 +151,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': (
         'djangorestframework_camel_case.parser.CamelCaseJSONParser', # Any other parsers
     ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
 }
 
 # CORS
