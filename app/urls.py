@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls import url, include
 from app.views import (
     ChoiceDisponibilidadeMaquinaView,
@@ -29,7 +30,7 @@ ROUTER.register(r'choice-disponibilidade-maquina', ChoiceDisponibilidadeMaquinaV
 ROUTER.register(r'choice-exame-coleta', ChoiceExameColetaView)
 ROUTER.register(r'choice-periodo-turno', ChoicePeriodoTurnoView)
 ROUTER.register(r'choice-status-paciente', ChoiceStatusPacienteView)
-ROUTER.register(r'choice-teste-agua', ChoiceTesteAguaView)
+ROUTER.register(r'choice-resultado-agua', ChoiceTesteAguaView)
 ROUTER.register(r'controle-agua', ControleAguaView)
 ROUTER.register(r'controle-agua/file', FileControleAguaView)
 ROUTER.register(r'controle-coleta', ControleColetaView)

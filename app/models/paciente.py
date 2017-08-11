@@ -8,6 +8,7 @@ from app.strings import (
     VERBOSE_NOME,
     VERBOSE_STATUS,
     VERBOSE_CONVENIO,
+    VERBOSE_CPF,
 )
 
 class Paciente(models.Model):
@@ -30,6 +31,12 @@ class Paciente(models.Model):
     nome = models.CharField(
         max_length=150,
         verbose_name=VERBOSE_NOME,
+        unique=True,
+    )
+    cpf = models.CharField(
+        max_length=150,
+        verbose_name=VERBOSE_CPF,
+        unique=True,
     )
     convenio = models.CharField(
         max_length=150,

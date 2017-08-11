@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from app.admin.choice_disponibilidade_maquina import ChoiceDisponibilidadeMaquinaAdmin
 from app.admin.choice_exame_coleta import ChoiceExameColetaAdmin
 from app.admin.choice_periodo_turno import ChoicePeriodoTurnoAdmin

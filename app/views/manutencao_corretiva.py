@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from rest_framework import viewsets
 from app.models import ManutencaoCorretiva
 from app.serializers import ManutencaoCorretivaSerializer, ShallowManutencaoCorretivaSerializer

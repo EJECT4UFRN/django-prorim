@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from app.serializers.choice_disponibilidade_maquina import (
     ChoiceDisponibilidadeMaquinaSerializer,
 )

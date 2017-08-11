@@ -1,5 +1,6 @@
 from django.db import models
 from app.models.choice_exame_coleta import ChoiceExameColeta
+from app.models.choice_teste_agua import ChoiceTesteAgua
 from app.strings import (
     VERBOSE_CONTROLE_COLETA,
     VERBOSE_PLURAL_CONTROLE_COLETA,
@@ -12,6 +13,7 @@ from app.strings import (
     VERBOSE_RESULTADO,
     VERBOSE_NUMERO_DO_LAUDO,
     VERBOSE_REALIZADO,
+    VERBOSE_OBSERVACAO,
 )
 
 class ControleColeta(models.Model):
@@ -46,14 +48,22 @@ class ControleColeta(models.Model):
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_EXAME,
     )
-    resultado = models.CharField(
-        max_length=150,
+    resultado = models.ForeignKey(
+        ChoiceTesteAgua,
+        on_delete=models.CASCADE,
         verbose_name=VERBOSE_RESULTADO,
+        default=1,
     )
-    numero_do_laudo = models.IntegerField(
+    numero_do_laudo = models.CharField(
+        max_length=150,
         verbose_name=VERBOSE_NUMERO_DO_LAUDO,
     )
     realizado = models.BooleanField(
         default=False,
         verbose_name=VERBOSE_REALIZADO,
+    )
+    observacao = models.TextField(
+        default='',
+        blank=True,
+        verbose_name=VERBOSE_OBSERVACAO,
     )

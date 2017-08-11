@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from rest_framework import viewsets
 from app.serializers import ErroSerializer, ShallowErroSerializer
 from app.models import Erro

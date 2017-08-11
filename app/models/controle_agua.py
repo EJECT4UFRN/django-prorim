@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 from django.db import models
-from app.models import ChoiceTesteAgua
 from app.strings import (
     VERBOSE_CRIADO,
     VERBOSE_ATUALIZADO,
@@ -33,18 +33,16 @@ class ControleAgua(models.Model):
     data = models.DateTimeField(
         verbose_name=VERBOSE_DATA,
     )
-    teste = models.ForeignKey(
-        ChoiceTesteAgua,
-        on_delete=models.CASCADE,
+    teste = models.TextField(
         verbose_name=VERBOSE_TESTE,
     )
     resultado = models.BooleanField(
         default=False,
         verbose_name=VERBOSE_SATISFATORIO,
     )
-    numero_do_laudo = models.IntegerField(
+    numero_do_laudo = models.CharField(
+        max_length=150,
         verbose_name=VERBOSE_NUMERO_DO_LAUDO,
-        default=0,
     )
     arquivo_resultado = models.FileField(
         verbose_name=VERBOSE_ARQUIVO,

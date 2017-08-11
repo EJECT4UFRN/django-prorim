@@ -1,6 +1,7 @@
 from django.db import models
 from app.models.secao import Secao
 from app.models.paciente import Paciente
+from django.core.exceptions import ValidationError
 from app.strings import (
     VERBOSE_CRIADO,
     VERBOSE_ATUALIZADO,

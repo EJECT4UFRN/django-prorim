@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from rest_framework import viewsets
 from django.contrib.auth.models import User
 from app.serializers import UserSerializer

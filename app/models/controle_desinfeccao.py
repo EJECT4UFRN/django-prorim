@@ -7,6 +7,7 @@ from app.strings import (
     VERBOSE_DATA,
     VERBOSE_MOTIVO,
     VERBOSE_REALIZADO,
+    VERBOSE_OBSERVACAO,
 )
 
 class ControleDesinfeccao(models.Model):
@@ -36,4 +37,9 @@ class ControleDesinfeccao(models.Model):
     realizado = models.BooleanField(
         default=False,
         verbose_name=VERBOSE_REALIZADO,
+    )
+    observacao = models.TextField(
+        default='',
+        blank=True,
+        verbose_name=VERBOSE_OBSERVACAO,
     )

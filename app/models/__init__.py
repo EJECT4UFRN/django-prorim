@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """ Models """
 from app.models.choice_disponibilidade_maquina import ChoiceDisponibilidadeMaquina
 from app.models.choice_exame_coleta import ChoiceExameColeta

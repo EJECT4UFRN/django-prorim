@@ -1,4 +1,4 @@
-# from app.views._index import IndexView
+# coding=utf-8
 from app.views.choice_disponibilidade_maquina import ChoiceDisponibilidadeMaquinaView
 from app.views.choice_exame_coleta import ChoiceExameColetaView
 from app.views.choice_periodo_turno import ChoicePeriodoTurnoView

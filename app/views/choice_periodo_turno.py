@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from rest_framework import viewsets
 from app.models import ChoicePeriodoTurno
 from app.serializers import ChoicePeriodoTurnoSerializer

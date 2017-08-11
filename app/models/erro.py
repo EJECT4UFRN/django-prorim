@@ -34,7 +34,8 @@ class Erro(models.Model):
         auto_now=False,
         verbose_name=VERBOSE_ATUALIZADO,
     )
-    numero = models.IntegerField(
+    numero = models.CharField(
+        max_length=150,
         verbose_name=VERBOSE_NUMERO,
     )
     observacao = models.TextField(

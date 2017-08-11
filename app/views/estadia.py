@@ -1,11 +1,13 @@
+# -*- coding: utf-8 -*-
 from dateutil.parser import parse
-from rest_framework import viewsets
+from rest_framework import viewsets, serializers
 from app.serializers import (
     EstadiaSerializer,
     ShallowEstadiaSerializer,
     ShallowErroSerializer
 )
 from app.models import Estadia, Erro
+from app.strings import ERRO_ESTADIA
 
 
 class EstadiaView(viewsets.ModelViewSet):
@@ -41,6 +43,22 @@ class EstadiaView(viewsets.ModelViewSet):
         return Estadia.objects.all()
 
     def perform_create(self, serializer):
+        is_not_unique_paciente_per_date = Estadia.objects.filter(
+            secao__data=serializer.validated_data['secao'].data,
+            paciente=serializer.validated_data['paciente']
+            )
+        if is_not_unique_paciente_per_date:
+            nome = serializer.validated_data['paciente'].nome
+            obj_data = serializer.validated_data['secao'].data
+            day = obj_data.day
+            day = day if day>9 else '0{}'.format(day)
+            month = obj_data.month
+            month = month if month>9 else '0{}'.format(month)
+            data = '{}/{}/{}'.format(day, month, obj_data.year)
+            alert = ERRO_ESTADIA.format(nome, data)
+            raise serializers.ValidationError(
+                {'paciente': alert}
+            )
         if 'erro' in  serializer.validated_data:
             erro_data = serializer.validated_data.pop('erro', None)
         else:
