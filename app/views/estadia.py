@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from dateutil.parser import parse
 from rest_framework import viewsets, serializers
+from rest_framework.permissions import IsAuthenticated
 from app.serializers import (
     EstadiaSerializer,
     ShallowEstadiaSerializer,
@@ -12,6 +13,7 @@ from app.strings import ERRO_ESTADIA
 
 class EstadiaView(viewsets.ModelViewSet):
     queryset = Estadia.objects.all()
+    permission_classes = (IsAuthenticated,)
 
     def get_serializer_class(self):
         if self.action == 'create' or self.action == 'update' or  self.action == 'partial_update':

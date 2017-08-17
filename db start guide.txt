@@ -1,0 +1,33 @@
+createsuperuser
+
+Criar grupos:
+	Administrador
+	Consultor
+	Enfermeiro
+	Master
+	Técnico
+
+Criar usuário que tenha grupo Enfermeiro
+
+Adicionar opções:
+Opções de disponibilidade para máquina	
+  Disponível Branco
+  Não disponível Azul
+Opções de exame para controle de coleta	
+  Exame1
+  Exame2
+  Exame3
+Opções de período para seções
+  Noite
+  Tarde
+  Manhã
+Opções de teste para controle de água
+  Positivo
+  Negativo
+Opções de status para pacientes
+  Inativo
+  Ativo
+Salas
+  Sala1
+  Sala2
+  Sala3

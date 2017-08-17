@@ -22,6 +22,7 @@ from app.views import (
     SecaoView,
     TecnicoView,
     UserView,
+    ReportView,
 )
 from rest_framework.routers import DefaultRouter
 
@@ -49,5 +50,6 @@ ROUTER.register(r'tecnico', TecnicoView)
 
 urlpatterns = [
     url(r'^api/', include(ROUTER.urls)),
+    url(r'^api/report/$', ReportView.as_view(), name='rest_report'),
     url(r'^api/user/$', UserView.as_view(), name='rest_user_details'),
 ]

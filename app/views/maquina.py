@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from app.models import Maquina
 from app.serializers import MaquinaSerializer, ShallowMaquinaSerializer
 
 
 class MaquinaView(viewsets.ModelViewSet):
     queryset = Maquina.objects.all()
+    permission_classes = (IsAuthenticated,)
 
     def get_serializer_class(self):
         if self.action == 'create' or self.action == 'update' or  self.action == 'partial_update':

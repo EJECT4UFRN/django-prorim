@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from app.models.sala import Sala
 from app.models.choice_periodo_turno import ChoicePeriodoTurno
 from app.strings import (
@@ -9,6 +10,7 @@ from app.strings import (
     VERBOSE_SALA,
     VERBOSE_SECAO,
     VERBOSE_PLURAL_SECAO,
+    VERBOSE_ENFERMEIRO,
 )
 
 
@@ -43,4 +45,11 @@ class Secao(models.Model):
         Sala,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_SALA,
+    )
+    enfermeiro = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name=VERBOSE_ENFERMEIRO,
+        blank=True,
+        null=True,
     )

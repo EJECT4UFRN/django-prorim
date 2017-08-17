@@ -36,12 +36,18 @@ class ControleColeta(models.Model):
     )
     data_realizado = models.DateTimeField(
         verbose_name=VERBOSE_DATA_REALIZADO,
+        blank=True,
+        null=True,
     )
     data_envio = models.DateTimeField(
         verbose_name=VERBOSE_DATA_ENVIO,
+        blank=True,
+        null=True,
     )
     data_resultado = models.DateTimeField(
         verbose_name=VERBOSE_DATA_RESULTADO,
+        blank=True,
+        null=True,
     )
     exame = models.ForeignKey(
         ChoiceExameColeta,
@@ -52,7 +58,8 @@ class ControleColeta(models.Model):
         ChoiceTesteAgua,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_RESULTADO,
-        default=1,
+        blank=True,
+        null=True,
     )
     numero_do_laudo = models.CharField(
         max_length=150,
