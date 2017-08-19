@@ -19,8 +19,14 @@ class ReportView(APIView):
         if filtro:
             if 'inicial' in filtro:
                 inicial = parse(filtro['inicial'])
+                inicial = inicial.replace(hour=0)
+                inicial = inicial.replace(minute=0)
+                inicial = inicial.replace(second=0)
             if 'final' in filtro:
                 final = parse(filtro['final'])
+                final = final.replace(hour=23)
+                final = final.replace(minute=59)
+                final = final.replace(second=59)
         if not (final and inicial):
             return Response(
                 {'erro': 'Data inicial e final não foram informadas.'}

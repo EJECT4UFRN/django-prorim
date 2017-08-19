@@ -29,6 +29,8 @@ SECRET_KEY = '3+5n%ccxp5x*fa)*v60_sb$5e-ac$hvkng66f%8eyebv8$w0(g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# production key
+# DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -89,6 +91,7 @@ WSGI_APPLICATION = 'prorim.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# development
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -100,7 +103,7 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'prorimap_database',
+#         'NAME': 'prorimap_database2',
 #         'USER': 'prorimap_user',
 #         'PASSWORD': 'papelarvore2017',
 #         'HOST': 'localhost',

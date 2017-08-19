@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from dateutil.parser import parse
+from rest_framework.response import Response
 from rest_framework import viewsets, serializers
 from rest_framework.permissions import IsAuthenticated
 from app.serializers import (
@@ -7,7 +8,7 @@ from app.serializers import (
     ShallowEstadiaSerializer,
     ShallowErroSerializer
 )
-from app.models import Estadia, Erro
+from app.models import Estadia, Erro, ChoicePeriodoTurno
 from app.strings import ERRO_ESTADIA
 
 
@@ -27,6 +28,7 @@ class EstadiaView(viewsets.ModelViewSet):
             if filtro:
                 if 'sala' in filtro:
                     query = query.filter(secao__sala=filtro['sala'])
+                    # Filtro da página 'Gestão de enfermagem'
                     if 'data' in filtro:
                         data = parse(filtro['data'])
                         query = query.filter(
@@ -38,6 +40,19 @@ class EstadiaView(viewsets.ModelViewSet):
                             query = query.filter(
                                 secao__periodo=filtro['periodo']
                                 )
+                            return query
+                    # Filtro da página 'Agendamentos'
+                    elif 'inicial' in filtro:
+                        inicial = parse(filtro['inicial'])
+                        inicial = inicial.replace(hour=0)
+                        inicial = inicial.replace(minute=0)
+                        inicial = inicial.replace(second=0)
+                        if 'final' in filtro:
+                            final = parse(filtro['final'])
+                            final = final.replace(hour=23)
+                            final = final.replace(minute=59)
+                            final = final.replace(second=59)
+                            query = query.filter(secao__data__range=(inicial, final))
                             return query
                 if 'paciente' in filtro:
                     return query.filter(paciente=filtro['paciente'])
@@ -53,9 +68,9 @@ class EstadiaView(viewsets.ModelViewSet):
             nome = serializer.validated_data['paciente'].nome
             obj_data = serializer.validated_data['secao'].data
             day = obj_data.day
-            day = day if day>9 else '0{}'.format(day)
+            day = day if day > 9 else '0{}'.format(day)
             month = obj_data.month
-            month = month if month>9 else '0{}'.format(month)
+            month = month if month > 9 else '0{}'.format(month)
             data = '{}/{}/{}'.format(day, month, obj_data.year)
             alert = ERRO_ESTADIA.format(nome, data)
             raise serializers.ValidationError(

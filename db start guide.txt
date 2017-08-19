@@ -7,26 +7,27 @@ Criar grupos:
 	Master
 	Técnico
 
-Criar usuário que tenha grupo Enfermeiro
+Criar usuários que tenham grupo Enfermeiro
+Criar usuários que tenham grupo Técnico
 
 Adicionar opções:
 Opções de disponibilidade para máquina	
   Disponível Branco
   Não disponível Azul
-Opções de exame para controle de coleta	
+Opções de exame para controle de água
   Exame1
   Exame2
   Exame3
 Opções de período para seções
-  Noite
-  Tarde
   Manhã
-Opções de teste para controle de água
+  Tarde
+  Noite
+Opções de resultado para controle de água
   Positivo
   Negativo
 Opções de status para pacientes
-  Inativo
   Ativo
+  Inativo
 Salas
   Sala1
   Sala2
