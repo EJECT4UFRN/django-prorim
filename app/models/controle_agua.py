@@ -12,6 +12,12 @@ from app.strings import (
     VERBOSE_ARQUIVO,
 )
 
+def upload_to_path(instance, filename):
+    extension = filename.split('.')
+    print(extension)
+    extension = extension[len(extension)-1]
+    return 'uploads/arquivo_{0}.{1}'.format(instance.id, extension)
+
 class ControleAgua(models.Model):
     """ Controle de água da para a clínica. """
 
@@ -46,6 +52,6 @@ class ControleAgua(models.Model):
     )
     arquivo_resultado = models.FileField(
         verbose_name=VERBOSE_ARQUIVO,
-        upload_to='uploads/%Y/%m/%d/',
+        upload_to=upload_to_path,
         blank=True,
     )
