@@ -8,6 +8,12 @@ from app.serializers.choice_exame_coleta import (
 from app.serializers.choice_periodo_turno import (
     ChoicePeriodoTurnoSerializer,
 )
+from app.serializers.choice_status_estadia import (
+    ChoiceStatusEstadiaSerializer,
+)
+from app.serializers.choice_status_manutencao_corretiva import (
+    ChoiceStatusManutencaoCorretivaSerializer,
+)
 from app.serializers.choice_status_paciente import (
     ChoiceStatusPacienteSerializer,
 )

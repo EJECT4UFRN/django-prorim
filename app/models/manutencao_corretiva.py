@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from app.models.erro import Erro
+from app.models.choice_status_manutencao_corretiva import ChoiceStatusManutencaoCorretiva
 from app.strings import (
     VERBOSE_CRIADO,
     VERBOSE_ATUALIZADO,
@@ -10,6 +11,7 @@ from app.strings import (
     VERBOSE_ACAO,
     VERBOSE_TECNICO,
     VERBOSE_ERRO,
+    VERBOSE_STATUS
 )
 
 class ManutencaoCorretiva(models.Model):
@@ -50,6 +52,13 @@ class ManutencaoCorretiva(models.Model):
         User,
         on_delete=models.CASCADE,
         verbose_name=VERBOSE_TECNICO,
+        blank=True,
+        null=True,
+    )
+    status = models.ForeignKey(
+        ChoiceStatusManutencaoCorretiva,
+        on_delete=models.CASCADE,
+        verbose_name=VERBOSE_STATUS,
         blank=True,
         null=True,
     )

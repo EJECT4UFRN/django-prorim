@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from app.models.choice_exame_coleta import ChoiceExameColeta
 from app.models.choice_teste_agua import ChoiceTesteAgua
 from app.strings import (
@@ -14,6 +15,7 @@ from app.strings import (
     VERBOSE_NUMERO_DO_LAUDO,
     VERBOSE_REALIZADO,
     VERBOSE_OBSERVACAO,
+    VERBOSE_TECNICO,
 )
 
 class ControleColeta(models.Model):
@@ -68,6 +70,13 @@ class ControleColeta(models.Model):
     realizado = models.BooleanField(
         default=False,
         verbose_name=VERBOSE_REALIZADO,
+    )
+    tecnico = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name=VERBOSE_TECNICO,
+        blank=True,
+        null=True,
     )
     observacao = models.TextField(
         default='',

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from app.models import Estadia, Secao
-from app.serializers.erro import NoRelationErroSerializer
+from app.serializers.erro import ErroSerializer
 
 
 class ShallowSecaoSerializer(serializers.ModelSerializer):
@@ -10,7 +10,7 @@ class ShallowSecaoSerializer(serializers.ModelSerializer):
 
 
 class EstadiaSerializer(serializers.ModelSerializer):
-    erro = NoRelationErroSerializer()
+    erro = ErroSerializer()
 
     class Meta:
         model = Estadia

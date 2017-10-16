@@ -6,6 +6,7 @@ from app.strings import (
     VERBOSE_ATUALIZADO,
     VERBOSE_NUMERO_DE_MACAS,
     VERBOSE_IDENTIFICADOR,
+    VERBOSE_DESATIVADO,
 )
 
 class Sala(models.Model):
@@ -31,6 +32,10 @@ class Sala(models.Model):
     identificador = models.CharField(
         max_length=150,
         verbose_name=VERBOSE_IDENTIFICADOR,
+    )
+    desativado = models.BooleanField(
+        default=False,
+        verbose_name=VERBOSE_DESATIVADO,
     )
 
     def __str__(self):

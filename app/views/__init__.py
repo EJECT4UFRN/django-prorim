@@ -3,6 +3,8 @@ from app.views.choice_disponibilidade_maquina import ChoiceDisponibilidadeMaquin
 from app.views.choice_exame_coleta import ChoiceExameColetaView
 from app.views.choice_periodo_turno import ChoicePeriodoTurnoView
 from app.views.choice_teste_agua import ChoiceTesteAguaView
+from app.views.choice_status_estadia import ChoiceStatusEstadiaView
+from app.views.choice_status_manutencao_corretiva import ChoiceStatusManutencaoCorretivaView
 from app.views.choice_status_paciente import ChoiceStatusPacienteView
 from app.views.controle_agua import ControleAguaView, FileControleAguaView
 from app.views.controle_coleta import ControleColetaView

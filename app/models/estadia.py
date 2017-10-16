@@ -1,6 +1,7 @@
 from django.db import models
 from app.models.secao import Secao
 from app.models.paciente import Paciente
+from app.models.choice_status_estadia import ChoiceStatusEstadia
 from django.core.exceptions import ValidationError
 from app.strings import (
     VERBOSE_CRIADO,
@@ -12,6 +13,7 @@ from app.strings import (
     VERBOSE_PACIENTE,
     VERBOSE_INICIO,
     VERBOSE_FIM,
+    VERBOSE_STATUS
 )
 
 
@@ -57,6 +59,13 @@ class Estadia(models.Model):
     )
     fim = models.DateTimeField(
         verbose_name=VERBOSE_FIM,
+        blank=True,
+        null=True,
+    )
+    status = models.ForeignKey(
+        ChoiceStatusEstadia,
+        on_delete=models.CASCADE,
+        verbose_name=VERBOSE_STATUS,
         blank=True,
         null=True,
     )

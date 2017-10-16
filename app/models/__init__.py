@@ -4,6 +4,8 @@ from app.models.choice_disponibilidade_maquina import ChoiceDisponibilidadeMaqui
 from app.models.choice_exame_coleta import ChoiceExameColeta
 from app.models.choice_periodo_turno import ChoicePeriodoTurno
 from app.models.choice_teste_agua import ChoiceTesteAgua
+from app.models.choice_status_estadia import ChoiceStatusEstadia
+from app.models.choice_status_manutencao_corretiva import ChoiceStatusManutencaoCorretiva
 from app.models.choice_status_paciente import ChoiceStatusPaciente
 from app.models.controle_agua import ControleAgua
 from app.models.controle_coleta import ControleColeta

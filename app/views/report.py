@@ -83,6 +83,15 @@ class ReportView(APIView):
                     'nome': sala.identificador,
                     'count': count,
                 })
+        choices_status_estadia = ChoiceStatusEstadia.objects.all()
+        estadias_status = []
+        for choice in choices_status_estadia:
+            count = estadias.filter(status=choice).count()
+            if count > 0:
+                estadias_status.append({
+                    'nome': choice.nome,
+                    'count': count,
+                })
         # Queries para Erro
         erros = Erro.objects.filter(estadia__secao__data__range=(inicial, final))
         maquinas = Maquina.objects.all()
@@ -137,6 +146,7 @@ class ReportView(APIView):
                 'total': estadias.count(),
                 'periodos': estadias_periodos,
                 'salas': estadias_salas,
+                'status': estadias_status
             },
             'erros': {
                 'total': erros.count(),

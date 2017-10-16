@@ -4,6 +4,8 @@ from app.views import (
     ChoiceDisponibilidadeMaquinaView,
     ChoiceExameColetaView,
     ChoicePeriodoTurnoView,
+    ChoiceStatusEstadiaView,
+    ChoiceStatusManutencaoCorretivaView,
     ChoiceStatusPacienteView,
     ChoiceTesteAguaView,
     ControleAguaView,
@@ -30,6 +32,8 @@ ROUTER = DefaultRouter()
 ROUTER.register(r'choice-disponibilidade-maquina', ChoiceDisponibilidadeMaquinaView)
 ROUTER.register(r'choice-exame-coleta', ChoiceExameColetaView)
 ROUTER.register(r'choice-periodo-turno', ChoicePeriodoTurnoView)
+ROUTER.register(r'choice-status-estadia', ChoiceStatusEstadiaView)
+ROUTER.register(r'choice-status-manutencao-corretiva', ChoiceStatusManutencaoCorretivaView)
 ROUTER.register(r'choice-status-paciente', ChoiceStatusPacienteView)
 ROUTER.register(r'choice-resultado-agua', ChoiceTesteAguaView)
 ROUTER.register(r'controle-agua', ControleAguaView)

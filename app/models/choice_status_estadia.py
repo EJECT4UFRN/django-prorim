@@ -2,20 +2,19 @@ from django.db import models
 from app.strings import (
     VERBOSE_CRIADO,
     VERBOSE_ATUALIZADO,
-    VERBOSE_CHOICE_STATUS_PACIENTE,
-    VERBOSE_PLURAL_CHOICE_STATUS_PACIENTE,
+    VERBOSE_CHOICE_STATUS_ESTADIA,
+    VERBOSE_PLURAL_CHOICE_STATUS_ESTADIA,
     VERBOSE_NOME,
     VERBOSE_DESATIVADO,
 )
 
 
-class ChoiceStatusPaciente(models.Model):
-    """ Opções de status para pacientes.
-    Ex: Disponível, não disponível. """
+class ChoiceStatusEstadia(models.Model):
+    """ Opções de status para estadias. """
 
     class Meta:
-        verbose_name = VERBOSE_CHOICE_STATUS_PACIENTE
-        verbose_name_plural = VERBOSE_PLURAL_CHOICE_STATUS_PACIENTE
+        verbose_name = VERBOSE_CHOICE_STATUS_ESTADIA
+        verbose_name_plural = VERBOSE_PLURAL_CHOICE_STATUS_ESTADIA
 
     criado = models.DateTimeField(
         auto_now_add=True,

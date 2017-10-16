@@ -3,7 +3,9 @@ from app.admin.choice_disponibilidade_maquina import ChoiceDisponibilidadeMaquin
 from app.admin.choice_exame_coleta import ChoiceExameColetaAdmin
 from app.admin.choice_periodo_turno import ChoicePeriodoTurnoAdmin
 from app.admin.choice_teste_agua import ChoiceTesteAguaAdmin
-from app.admin.choice_status_paciente import ChoiceStatusPaciente
+from app.admin.choice_status_estadia import ChoiceStatusEstadiaAdmin
+from app.admin.choice_status_manutencao_corretiva import ChoiceStatusManutencaoCorretivaAdmin
+from app.admin.choice_status_paciente import ChoiceStatusPacienteAdmin
 from app.admin.controle_agua import ControleAguaAdmin
 from app.admin.controle_coleta import ControleColetaAdmin
 from app.admin.controle_desinfeccao import ControleDesinfeccaoAdmin
